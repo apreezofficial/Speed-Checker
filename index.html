@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Speed Tester</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-tachometer-alt"></i>
+                <h1>Internet Speed Checker</h1>
+            </div>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <main class="main-content">
+            <div class="card speed-test-card">
+                <h2>Speed Test</h2>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="progressBar"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span>0 Mbps</span>
+                        <span id="maxSpeedLabel">100 Mbps</span>
+                    </div>
+                </div>
+                
+                <div class="test-results">
+                    <div class="result-box">
+                        <h3>Download Speed</h3>
+                        <div class="result-value" id="downloadSpeed">--</div>
+                        <div class="result-unit">Mbps</div>
+                    </div>
+                    <div class="result-box">
+                        <h3>Upload Speed</h3>
+                        <div class="result-value" id="uploadSpeed">--</div>
+                        <div class="result-unit">Mbps</div>
+                    </div>
+                    <div class="result-box">
+                        <h3>Ping</h3>
+                        <div class="result-value" id="pingValue">--</div>
+                        <div class="result-unit">ms</div>
+                    </div>
+                    <div class="result-box">
+                        <h3>Jitter</h3>
+                        <div class="result-value" id="jitterValue">--</div>
+                        <div class="result-unit">ms</div>
+                    </div>
+                </div>
+
+                <div class="connection-status">
+                    <div class="status-indicator" id="statusIndicator"></div>
+                    <span id="connectionStatus">Checking connection...</span>
+                </div>
+
+                <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
+                    <button class="btn" id="startTestBtn">
+                        <i class="fas fa-play"></i> Start Test
+                    </button>
+                    <button class="btn btn-secondary" id="shareResultsBtn" disabled>
+                        <i class="fas fa-share-alt"></i> Share Results
+                    </button>
+                    <button class="btn btn-secondary" id="saveResultsBtn" disabled>
+                        <i class="fas fa-save"></i> Save Results
+                    </button>
+                </div>
+            </div>
+
+            <div class="card history-card">
+                <h2>Test History</h2>
+                <div class="chart-container">
+                    <canvas id="speedChart"></canvas>
+                </div>
+                <div class="history-list" id="historyList">
+                    <!-- History items will be added here dynamically -->
+                    <p style="text-align: center; padding: 20px; opacity: 0.7;">No test history yet. Run a test to see results here.</p>
+                </div>
+            </div>
+
+            <div class="card info-card">
+                <h2>Connection Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3>IP Address</h3>
+                        <p id="ipAddress">--</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>ISP</h3>
+                        <p id="ispInfo">--</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Location</h3>
+                        <p id="locationInfo">--</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Server</h3>
+                        <p id="serverInfo">--</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
