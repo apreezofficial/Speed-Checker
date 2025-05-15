@@ -263,10 +263,10 @@ function saveTestToHistory() {
 // Event listeners
 startTestBtn.addEventListener('click', runSpeedTest);
 shareResultsBtn.addEventListener('click', () => {
-    alert('Results shared! In a real app, this would share your speed test results.');
+    alert('Abeg Calms nah');
 });
 saveResultsBtn.addEventListener('click', () => {
-    alert('Results saved! In a real app, this would save your results to local storage or a database.');
+    alert('Abeg Calms nah, still on it.');
 });
 
 // Initialize
